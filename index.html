@@ -1,0 +1,967 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Special Birthday Surprise ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #f8dce5;
+    --rose: #c65d79;
+    --deep-rose: #943c59;
+    --cream: #fffaf5;
+    --gold: #c9a45c;
+    --text: #573944;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+section {
+    position: relative;
+    padding: 90px 20px;
+}
+
+.script {
+    font-family: 'Great Vibes', cursive;
+    font-weight: normal;
+}
+
+.serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* INTRO SCREEN */
+
+#intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 20%, #fff 0, transparent 30%),
+        radial-gradient(circle at 80% 80%, #f4c5d5 0, transparent 35%),
+        linear-gradient(135deg, #fff8f4, #f8dce5, #fff0e5);
+    overflow: hidden;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    padding: 25px;
+    animation: fadeUp 1.5s ease;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 11px;
+    color: var(--deep-rose);
+    margin-bottom: 25px;
+}
+
+.intro-title {
+    font-size: clamp(48px, 9vw, 100px);
+    color: var(--deep-rose);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.intro-subtitle {
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 510px;
+    margin: 0 auto 35px;
+    color: #795663;
+}
+
+.primary-btn {
+    display: inline-block;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(135deg, #c65d79, #98445f);
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 30px #c65d7940;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px #c65d7960;
+}
+
+.small-note {
+    margin-top: 20px;
+    font-size: 11px;
+    opacity: .65;
+}
+
+/* DECORATIONS */
+
+.floating {
+    position: absolute;
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
+    opacity: .75;
+}
+
+.flower-one {
+    top: 12%;
+    left: 8%;
+    font-size: 48px;
+}
+
+.flower-two {
+    right: 9%;
+    top: 20%;
+    font-size: 35px;
+    animation-delay: 1s;
+}
+
+.flower-three {
+    bottom: 12%;
+    left: 15%;
+    font-size: 35px;
+    animation-delay: 2s;
+}
+
+.flower-four {
+    right: 13%;
+    bottom: 13%;
+    font-size: 50px;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* MAIN WEBSITE */
+
+#celebration {
+    display: none;
+}
+
+#celebration.visible {
+    display: block;
+    animation: fadeUp 1s ease;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at top, #fff 0, transparent 50%),
+        linear-gradient(145deg, #f8dce5, #fff5ee, #f4d7d8);
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--deep-rose);
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 10vw, 105px);
+    color: var(--deep-rose);
+    line-height: 1.05;
+}
+
+.hero h2 {
+    font-weight: 300;
+    font-size: clamp(18px, 3vw, 26px);
+    margin-top: 20px;
+}
+
+.hero p {
+    max-width: 500px;
+    margin: 25px auto;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.divider {
+    width: 90px;
+    height: 2px;
+    background: var(--gold);
+    margin: 30px auto;
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading .script {
+    color: var(--rose);
+    font-size: clamp(40px, 7vw, 62px);
+}
+
+.section-heading p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    opacity: .7;
+}
+
+/* PHOTO GALLERY */
+
+.gallery-section {
+    background: #fffaf7;
+}
+
+.gallery {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.photo-card {
+    background: white;
+    padding: 12px 12px 25px;
+    box-shadow: 0 10px 35px #7c465010;
+    transform: rotate(-1deg);
+    transition: .4s;
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) rotate(0);
+    box-shadow: 0 20px 40px #7c465025;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background: #f5dce3;
+}
+
+.photo-card p {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 27px;
+    color: var(--deep-rose);
+    margin-top: 15px;
+}
+
+/* MESSAGE */
+
+.message-section {
+    background: linear-gradient(135deg, #f8e5e9, #fff7f1);
+}
+
+.letter {
+    max-width: 760px;
+    margin: auto;
+    background: #fffdfb;
+    padding: clamp(30px, 6vw, 65px);
+    border: 1px solid #e8c9ce;
+    box-shadow: 0 15px 50px #9b536015;
+    position: relative;
+}
+
+.letter::before {
+    content: "❦";
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: var(--gold);
+}
+
+.letter h3 {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--deep-rose);
+    margin: 25px 0;
+}
+
+.letter p {
+    line-height: 2;
+    font-size: 14px;
+    margin-bottom: 18px;
+    color: #74545f;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Great Vibes', cursive;
+    color: var(--deep-rose);
+    font-size: 32px;
+    margin-top: 25px;
+}
+
+/* WISHES */
+
+.wishes-section {
+    text-align: center;
+    background: #fffaf7;
+}
+
+.wish-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.wish-card {
+    padding: 30px 20px;
+    background: white;
+    border: 1px solid #f0dce1;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.wish-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 30px #b95e7515;
+}
+
+.wish-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.wish-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--deep-rose);
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.wish-card p {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* FINAL SECTION */
+
+.final-section {
+    text-align: center;
+    background: linear-gradient(145deg, #f0d0d9, #fff0e6, #f5dce3);
+    padding: 100px 20px;
+}
+
+.final-section .script {
+    font-size: clamp(48px, 9vw, 85px);
+    color: var(--deep-rose);
+}
+
+.final-section p {
+    max-width: 550px;
+    margin: 25px auto;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.heart {
+    color: var(--rose);
+    display: inline-block;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* MUSIC BUTTON */
+
+.music-btn {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: var(--deep-rose);
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #943c5940;
+    display: none;
+}
+
+.music-btn.visible {
+    display: block;
+}
+
+/* CONFETTI */
+
+.confetti {
+    position: fixed;
+    top: -15px;
+    z-index: 20;
+    width: 8px;
+    height: 12px;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px 15px;
+    text-align: center;
+    background: #fffaf7;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #8a6874;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    section {
+        padding: 70px 18px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        gap: 25px;
+    }
+
+    .photo-card img {
+        height: 320px;
+    }
+
+    .wish-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .flower-one {
+        left: 3%;
+        font-size: 30px;
+    }
+
+    .flower-two {
+        right: 4%;
+        font-size: 28px;
+    }
+
+    .flower-three {
+        left: 5%;
+        font-size: 27px;
+    }
+
+    .flower-four {
+        right: 5%;
+        font-size: 32px;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME SCREEN -->
+
+<section id="intro">
+
+    <div class="floating flower-one">🌸</div>
+    <div class="floating flower-two">✨</div>
+    <div class="floating flower-three">🌷</div>
+    <div class="floating flower-four">💗</div>
+
+    <div class="intro-content">
+
+        <p class="eyebrow">A little surprise, made with love</p>
+
+        <h1 class="intro-title script">
+            For Someone<br>Wonderful
+        </h1>
+
+        <p class="intro-subtitle">
+            Today is all about celebrating someone who deserves
+            endless happiness, beautiful memories, and all the
+            love this world has to offer.
+        </p>
+
+        <button class="primary-btn" onclick="openSurprise()">
+            OPEN YOUR SURPRISE ✨
+        </button>
+
+        <p class="small-note">
+            A little something to make your day more special.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- BIRTHDAY WEBSITE -->
+
+<div id="celebration">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="floating flower-one">🌷</div>
+        <div class="floating flower-two">✨</div>
+        <div class="floating flower-three">🌸</div>
+        <div class="floating flower-four">💖</div>
+
+        <div class="hero-content">
+
+            <p class="hero-label">Today is your special day</p>
+
+            <h1 class="script">
+                Happy Birthday
+            </h1>
+
+            <h2 class="serif" id="personName">
+                To Someone Truly Special
+            </h2>
+
+            <div class="divider"></div>
+
+            <p>
+                May your day be filled with beautiful smiles,
+                warm hugs, sweet surprises, and moments
+                that make your heart happy.
+            </p>
+
+            <span style="font-size:35px">🎂 🌸 🎁</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+
+    <section class="gallery-section">
+
+        <div class="section-heading">
+
+            <h2 class="script">Beautiful Memories</h2>
+
+            <p>A FEW MOMENTS WORTH CELEBRATING</p>
+
+        </div>
+
+        <div class="gallery">
+
+            <div class="photo-card">
+
+                <!-- Replace photo1.jpg with her picture -->
+
+                <img src="photo1.jpeg"
+     alt="A beautiful birthday memory">
+
+                <p>A Beautiful Smile</p>
+
+            </div>
+
+            <div class="photo-card">
+
+                <!-- Replace photo2.jpg with her picture -->
+
+              <img src="photo2.jpeg"
+     alt="A special memory">
+
+                <p>Moments of Happiness</p>
+
+            </div>
+
+            <div class="photo-card">
+
+                <!-- Replace photo3.jpg with her picture -->
+
+                <img src="photo3.jpeg"
+     alt="A cherished memory">
+
+                <p>Forever Special</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIRTHDAY LETTER -->
+
+    <section class="message-section">
+
+        <div class="section-heading">
+
+            <h2 class="script">A Little Letter for You</h2>
+
+            <p>WORDS FROM THE HEART</p>
+
+        </div>
+
+        <div class="letter">
+
+            <h3>Dear Ma'am,</h3>
+
+            <p>
+                On your special day, I just want to wish you
+                a life filled with happiness, peace, good health,
+                and countless reasons to smile.
+            </p>
+
+            <p>
+                Some people make the world a little brighter
+                just by being themselves. Your kindness,
+                warmth, and presence make you someone truly
+                worth celebrating.
+            </p>
+
+            <p>
+                May every new day bring you something beautiful.
+                May your dreams keep growing, your heart stay
+                peaceful, and your life be surrounded by people
+                who genuinely care about you.
+            </p>
+
+            <p>
+                I hope this little surprise brings a smile to
+                your face and reminds you that you deserve
+                every bit of happiness coming your way.
+            </p>
+
+            <p>
+                May this new chapter of your life be even more
+                beautiful than the last. Keep smiling and keep
+                spreading happiness wherever you go.
+            </p>
+
+            <div class="signature">
+                With lots of love ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPECIAL WISHES -->
+
+    <section class="wishes-section">
+
+        <div class="section-heading">
+
+            <h2 class="script">Wishes Just for You</h2>
+
+            <p>THREE LITTLE WISHES FOR YOUR NEW YEAR</p>
+
+        </div>
+
+        <div class="wish-grid">
+
+            <div class="wish-card">
+
+                <div class="wish-icon">🌷</div>
+
+                <h3>Endless Happiness</h3>
+
+                <p>
+                    May your days be filled with laughter,
+                    beautiful surprises, and little moments
+                    that make life wonderful.
+                </p>
+
+            </div>
+
+            <div class="wish-card">
+
+                <div class="wish-icon">💖</div>
+
+                <h3>Love & Togetherness</h3>
+
+                <p>
+                    May you always be surrounded by people
+                    who appreciate you, support you,
+                    and make you feel loved.
+                </p>
+
+            </div>
+
+            <div class="wish-card">
+
+                <div class="wish-icon">✨</div>
+
+                <h3>Dreams Come True</h3>
+
+                <p>
+                    May the year ahead bring new opportunities,
+                    peaceful moments, good health,
+                    and countless blessings.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL BIRTHDAY WISH -->
+
+    <section class="final-section">
+
+        <h2 class="script">Once Again...</h2>
+
+        <h1 class="script" style="margin-top:10px">
+            Happy Birthday!
+        </h1>
+
+        <div class="divider"></div>
+
+        <p>
+            May your smile always shine as brightly as the
+            stars, may your heart always find reasons to be
+            happy, and may life surprise you with beautiful
+            things when you least expect them.
+        </p>
+
+        <p style="font-size:35px">
+            <span class="heart">♥</span>
+            🌸 🎂 🌸
+            <span class="heart">♥</span>
+        </p>
+
+        <p class="script" style="font-size:32px">
+            You deserve all the happiness in the world.
+        </p>
+
+    </section>
+
+
+    <footer>
+        MADE WITH LOVE, JUST FOR YOU ♥
+    </footer>
+
+</div>
+
+
+<!-- MUSIC BUTTON -->
+
+<button
+    id="musicButton"
+    class="music-btn"
+    onclick="toggleMusic()"
+    aria-label="Play or pause birthday music"
+    title="Play or pause music">
+    ♫
+</button>
+
+
+<!-- OPTIONAL BACKGROUND MUSIC -->
+
+<audio id="birthdayMusic" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+// ==================================
+// PERSONALIZE YOUR BIRTHDAY WEBSITE
+// ==================================
+
+const birthdayPerson = "Someone Special";
+
+// Change the name above to her actual name.
+// Example: const birthdayPerson = "Mrs. Sharma";
+
+document.getElementById("personName").textContent =
+    birthdayPerson;
+
+
+// ==================================
+// OPEN THE SURPRISE
+// ==================================
+
+function openSurprise() {
+
+    const intro = document.getElementById("intro");
+    const celebration = document.getElementById("celebration");
+    const musicButton = document.getElementById("musicButton");
+
+    intro.style.display = "none";
+    celebration.classList.add("visible");
+    musicButton.classList.add("visible");
+
+    celebration.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    launchConfetti();
+
+    // Browsers may block autoplay, so music is optional.
+    // The visitor can start it using the music button.
+
+}
+
+
+// ==================================
+// BACKGROUND MUSIC
+// ==================================
+
+const music = document.getElementById("birthdayMusic");
+const musicButton = document.getElementById("musicButton");
+
+async function toggleMusic() {
+
+    if (music.paused) {
+
+        try {
+
+            await music.play();
+            musicButton.textContent = "♫";
+
+        } catch (error) {
+
+            alert(
+                "Please add a valid music.mp3 file to the website folder."
+            );
+
+        }
+
+    } else {
+
+        music.pause();
+        musicButton.textContent = "♪";
+
+    }
+
+}
+
+
+// ==================================
+// CONFETTI CELEBRATION
+// ==================================
+
+function launchConfetti() {
+
+    const symbols = ["🌸", "💗", "✨", "🌷", "♥"];
+
+    for (let i = 0; i < 65; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        piece.style.left = Math.random() * 100 + "vw";
+
+        piece.style.fontSize =
+            (12 + Math.random() * 15) + "px";
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        }, 9000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+```
